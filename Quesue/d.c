@@ -33,21 +33,17 @@ int intsert(int val)
 }
 int finsert(int val)
 {
-	int i;
-	if(r>=n-1)
-		printf("array is full......\n");
-	else if(r<0)
-	{
-		a[r]=val;
-	}
+	if(f<0)
+    {
+		f=r=0;
+        a[f]=val;
+    }
+	else if(f==0)
+		printf("Not number added\n");
 	else
 	{
-    r++;
-    for(i=r;i>=f;i--)
-    {
-        a[i]=a[i-1];
-    }
-    a[0]=val;
+        f--;
+        a[f]=val;
     }
 }
 int delet()
@@ -65,11 +61,11 @@ int delet()
 }
 int ldelet()
 {
-    if(f==-1)
+    if(r<0)
         printf("Queue is empty:\n");
-    else if(r==0)
+    else if(f==r)
     {
-        r=n-1;
+       f=r=-1;
     }
     r--;
 }
