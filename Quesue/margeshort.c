@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define n 15
 void merage(int a[],int l,int mid,int h)
 {
     int b[20];
@@ -16,7 +15,7 @@ void merage(int a[],int l,int mid,int h)
         b[k++]=a[i++];
     while(j<=h)
         b[k++]=a[j++];
-    for(i=0;i<n;i++)
+    for(i=1;i<h;i++)
         a[i]=b[i];
 }
 int mergesort(int a[],int l,int h)
@@ -32,7 +31,7 @@ int mergesort(int a[],int l,int h)
 }
 int main()
 {
-    int a[n],i;
+    int a[15],i,n=15;
     for(i=0;i<n;i++)
         a[i]=rand()%99+1;
     printf("Befor shorting:\n");
